@@ -61,3 +61,69 @@ nav ul a:hover {
     font-size: 1.1rem;
     color: #d7ccc8;
 }
+
+/* === FOOTER == Roly === */
+footer {
+    background-color: #3e2723;
+    color: #d7ccc8;
+    padding: 40px;
+    text-align: center;
+}
+
+.footer-grid {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+
+.footer-grid h3 {
+    color: #ffcc80;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.footer-grid p {
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+}
+
+.footer-copy {
+    font-size: 0.8rem;
+    color: #a1887f;
+}
+
+/* === SOCIAL LINKS === */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 12px;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 204, 128, 0.15);
+    color: #ffcc80;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border: 2px solid transparent;
+}
+
+.social-icon:hover {
+    background-color: #ffcc80;
+    color: #3e2723;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    border-color: #ffcc80;
+}
+
+.social-icon i {
+    font-size: 1.2rem;
+}
