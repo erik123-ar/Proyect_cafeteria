@@ -1,4 +1,4 @@
 # Proyect_cafeteria
 # Erik Anzaldo Aguilar
-# Roly Lazaro Cari
+# Roly Raul Lazaro Cari
 # Rogelio Josue Carata Inca
