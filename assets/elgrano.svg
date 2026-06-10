@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" aria-labelledby="elgranoTitle elgranoDesc" role="img">
+  <title id="elgranoTitle">El Grano</title>
+  <desc id="elgranoDesc">Icono de un grano de café estilizado</desc>
+  <rect width="64" height="64" rx="10" fill="#fff0e6"/>
+  <g transform="translate(8,8)">
+    <ellipse cx="24" cy="24" rx="18" ry="28" fill="#3e2723"/>
+    <path d="M18 6c6 2 12 8 12 18s-6 20-12 22c-6-2-12-8-12-18s6-20 12-22z" fill="#5d4037"/>
+    <path d="M22 4c1.5 4 0 8-4 14" stroke="#ffcc80" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>

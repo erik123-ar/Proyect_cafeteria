@@ -2,7 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -29,6 +29,34 @@ nav {
     letter-spacing: 1px;
 }
 
+/* Nuevo estilo de marca: icono + texto */
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo-icon {
+    width: 52px;
+    height: 52px;
+    display: block;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid rgba(255, 204, 128, 0.95);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+    background-color: #fff;
+}
+
+.logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
 nav ul {
     list-style: none;
     display: flex;
@@ -48,18 +76,65 @@ nav ul a:hover {
 
 .hero {
     text-align: center;
-    padding: 60px 20px;
+    padding: 120px 20px;
+    background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #fff;
+}
+
+/* Botón de ordenar */
+.btn {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, #ffcc80, #ffdca8);
+    color: #3e2723;
+    border: 2px solid rgba(255,204,128,0.2);
+    box-shadow: 0 6px 14px rgba(62,39,35,0.18);
+}
+
+.btn-primary:hover { transform: translateY(-3px); }
+
+@media (max-width: 720px) {
+    nav { padding: 12px 18px; }
+    nav ul { display: none; }
+    .hero { padding: 40px 12px; }
 }
 
 .hero h1 {
-    font-size: 2.5rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
     font-weight: 700;
     margin-bottom: 10px;
+    color: #fff;
+    letter-spacing: 1px;
 }
 
-.hero p {
+.hero .subtitle {
     font-size: 1.1rem;
-    color: #d7ccc8;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 8px;
+    font-weight: 400;
+}
+
+.tipo {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 6px 12px;
+    background: rgba(255,204,128,0.12);
+    color: #ffdca8;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.6px;
 }
 
 /* === FOOTER == Roly === */
