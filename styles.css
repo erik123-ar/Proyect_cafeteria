@@ -137,129 +137,275 @@ nav ul a:hover {
     letter-spacing: 0.6px;
 }
 
-/* === FOOTER == Roly === */
-footer {
-    background-color: #3e2723;
-    color: #d7ccc8;
-    padding: 40px;
-    text-align: center;
+/* === CUERPO - Rogelio J. Carata I. === */
+
+/* --- Contenedor del cuerpo --- */
+.cuerpo-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
 }
 
-.footer-grid {
-    display: flex;
-    justify-content: center;
-    gap: 60px;
-    flex-wrap: wrap;
-    margin-bottom: 24px;
+.section-cuerpo {
+    padding: 48px 24px;
 }
 
-.footer-grid h3 {
-    color: #ffcc80;
-    margin-bottom: 10px;
-    font-size: 1rem;
+.section-menu-bg {
+    background-color: rgba(255, 204, 128, 0.08);
 }
 
-.footer-grid p {
-    font-size: 0.9rem;
-    margin-bottom: 4px;
-}
-
-.footer-copy {
-    font-size: 0.8rem;
-    color: #a1887f;
-}
-
-/* === SOCIAL LINKS === */
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 18px;
-    margin-top: 12px;
-}
-
-.social-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background-color: rgba(255, 204, 128, 0.15);
-    color: #ffcc80;
-    border-radius: 50%;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    border: 2px solid transparent;
-}
-
-.social-icon:hover {
-    background-color: #ffcc80;
+/* --- Títulos de sección con línea dorada --- */
+.cuerpo-titulo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
     color: #3e2723;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    border-color: #ffcc80;
+    margin-bottom: 6px;
 }
 
-.social-icon i {
-    font-size: 1.2rem;
+.cuerpo-divider {
+    height: 3px;
+    background: linear-gradient(90deg, #c8a26a, #e2c08d);
+    margin-bottom: 32px;
+    border-radius: 2px;
 }
 
-/* === COFFEE CAROUSEL === */
-.coffee-carousel {
-    overflow: hidden;
-    margin-bottom: 24px;
-    padding: 20px 0;
+/* --- Sección Horarios --- */
+.horarios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
 }
 
-.carousel-track {
-    display: flex;
-    gap: 30px;
-    animation: scrollCarousel 15s linear infinite;
-    width: fit-content;
-}
-
-.carousel-item {
-    font-size: 3rem;
-    opacity: 0.7;
-    transition: opacity 0.3s ease;
-    flex-shrink: 0;
-}
-
-.carousel-track:hover .carousel-item {
-    animation-play-state: paused;
-    opacity: 1;
-}
-
-@keyframes scrollCarousel {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
-/* === FOOTER DIVIDER === */
-.footer-divider {
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #ffcc80, transparent);
-    margin: 16px 0;
-}
-
-/* === FOOTER SECTION === */
-.footer-section {
+.horario-card {
+    background: #f0ebe4;
+    border-radius: 12px;
+    padding: 24px 20px;
+    text-align: center;
+    border: 1px solid #e0d6cc;
     transition: transform 0.3s ease;
 }
 
-.footer-section:hover {
-    transform: translateY(-5px);
+.horario-card:hover {
+    transform: translateY(-4px);
 }
 
-.footer-section h3 {
-    text-transform: uppercase;
-    letter-spacing: 1px;
+.horario-dia {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #8d6e63;
+    margin-bottom: 8px;
+}
+
+.horario-hora {
+    font-size: 1rem;
+    color: #3e2723;
+    font-weight: 500;
+}
+
+/* --- Sección Menú --- */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.menu-card {
+    background: #f0ebe4;
+    border-radius: 12px;
+    padding: 28px 20px;
+    text-align: center;
+    border: 1px solid #e0d6cc;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(62, 39, 35, 0.1);
+}
+
+.menu-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    color: #3e2723;
+    margin-bottom: 6px;
     font-weight: 700;
 }
 
+.menu-desc {
+    color: #795548;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+
+.menu-precio {
+    display: inline-block;
+    background: #3e2723;
+    color: #fff;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.88rem;
+    letter-spacing: 0.5px;
+}
+
+/* --- Sección Formulario de Pedido --- */
+.form-pedido {
+    max-width: 100%;
+}
+
+.form-grupo {
+    margin-bottom: 24px;
+}
+
+.form-grupo label {
+    display: block;
+    font-weight: 700;
+    color: #4e342e;
+    margin-bottom: 8px;
+    font-size: 0.82rem;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+.form-grupo input,
+.form-grupo textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #d7ccc8;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    color: #3e2723;
+    background: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-grupo input:focus,
+.form-grupo textarea:focus {
+    outline: none;
+    border-color: #c8a26a;
+    box-shadow: 0 0 0 3px rgba(200, 162, 106, 0.15);
+}
+
+.form-grupo textarea {
+    resize: vertical;
+}
+
+.btn-enviar {
+    width: 100%;
+    padding: 16px;
+    background: #3e2723;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    letter-spacing: 0.5px;
+}
+
+.btn-enviar:hover {
+    background: #4e342e;
+    transform: translateY(-2px);
+}
+
+/* Confirmación */
+.pedido-confirmacion {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(62, 39, 35, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    backdrop-filter: blur(8px);
+}
+
+.confirmacion-contenido {
+    background: #fff;
+    border-radius: 16px;
+    padding: 48px;
+    text-align: center;
+    max-width: 440px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 0.4s ease;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.confirmacion-contenido i {
+    font-size: 3.5rem;
+    color: #66bb6a;
+    margin-bottom: 16px;
+}
+
+.confirmacion-contenido h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #3e2723;
+    margin-bottom: 12px;
+}
+
+.confirmacion-contenido p {
+    color: #6d4c41;
+    line-height: 1.7;
+    margin-bottom: 24px;
+}
+
+.btn-nuevo-pedido {
+    background: #3e2723;
+    color: #fff;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-nuevo-pedido:hover {
+    background: #4e342e;
+}
+
+/* --- Responsive del CUERPO --- */
+@media (max-width: 768px) {
+    .horarios-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cuerpo-titulo {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .confirmacion-contenido {
+        margin: 20px;
+        padding: 32px 24px;
+    }
+}
+
+/* Footer carousel responsive (Roly) */
 @media (max-width: 768px) {
     .carousel-item {
         font-size: 2rem;

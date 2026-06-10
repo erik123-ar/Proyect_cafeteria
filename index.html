@@ -31,6 +31,145 @@
         </div>
     </header>
 
+    <!-- ============================================== -->
+    <!-- Rogelio J. Carata I.: feature/CUERPO           -->
+    <!-- ============================================== -->
+
+    <!-- SECCIÓN: Horarios de Atención -->
+    <section id="horarios" class="section-cuerpo">
+        <div class="cuerpo-container">
+            <h2 class="cuerpo-titulo">Horarios de Atención</h2>
+            <div class="cuerpo-divider"></div>
+            <div class="horarios-grid">
+                <div class="horario-card">
+                    <h3 class="horario-dia">Lunes a Viernes</h3>
+                    <p class="horario-hora">7:00 am – 8:00 pm</p>
+                </div>
+                <div class="horario-card">
+                    <h3 class="horario-dia">Sábados</h3>
+                    <p class="horario-hora">8:00 am – 6:00 pm</p>
+                </div>
+                <div class="horario-card">
+                    <h3 class="horario-dia">Domingos</h3>
+                    <p class="horario-hora">9:00 am – 2:00 pm</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: Nuestro Menú -->
+    <section id="menu" class="section-cuerpo section-menu-bg">
+        <div class="cuerpo-container">
+            <h2 class="cuerpo-titulo">Nuestro Menú</h2>
+            <div class="cuerpo-divider"></div>
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <h4>Café Americano</h4>
+                    <p class="menu-desc">Suave y reconfortante</p>
+                    <span class="menu-precio">Bs. 15</span>
+                </div>
+                <div class="menu-card">
+                    <h4>Cappuccino</h4>
+                    <p class="menu-desc">Espuma cremosa con espresso</p>
+                    <span class="menu-precio">Bs. 20</span>
+                </div>
+                <div class="menu-card">
+                    <h4>Café con Leche</h4>
+                    <p class="menu-desc">Clásico y delicioso</p>
+                    <span class="menu-precio">Bs. 18</span>
+                </div>
+                <div class="menu-card">
+                    <h4>Croissant</h4>
+                    <p class="menu-desc">Horneado fresco cada día</p>
+                    <span class="menu-precio">Bs. 12</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: Realizar un Pedido -->
+    <section id="pedido" class="section-cuerpo">
+        <div class="cuerpo-container">
+            <h2 class="cuerpo-titulo">Realizar un Pedido</h2>
+            <div class="cuerpo-divider"></div>
+            <form id="form-pedido" class="form-pedido" onsubmit="enviarPedido(event)">
+                <div class="form-grupo">
+                    <label for="nombre">TU NOMBRE</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
+                </div>
+                <div class="form-grupo">
+                    <label for="pedido-texto">¿QUÉ DESEAS ORDENAR?</label>
+                    <input type="text" id="pedido-texto" name="pedido" placeholder="Ej: Cappuccino + Croissant" required>
+                </div>
+                <div class="form-grupo">
+                    <label for="notas">NOTA ADICIONAL</label>
+                    <textarea id="notas" name="notas" placeholder="Sin azúcar, con leche descremada..." rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn-enviar" id="btn-enviar-pedido">
+                    Enviar Pedido
+                </button>
+            </form>
+
+            <!-- Mensaje de confirmación -->
+            <div id="pedido-confirmacion" class="pedido-confirmacion" style="display: none;">
+                <div class="confirmacion-contenido">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>¡Pedido enviado!</h3>
+                    <p id="confirmacion-mensaje">Tu pedido ha sido recibido.</p>
+                    <button class="btn-nuevo-pedido" onclick="nuevoPedido()">Hacer otro pedido</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript para pedido -->
+    <script>
+        function enviarPedido(e) {
+            e.preventDefault();
+
+            const datos = {
+                nombre: document.getElementById('nombre').value,
+                pedido: document.getElementById('pedido-texto').value,
+                notas: document.getElementById('notas').value
+            };
+
+            fetch('/pedido', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(datos)
+            })
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('confirmacion-mensaje').textContent =
+                    `Gracias ${datos.nombre}, tu pedido "${datos.pedido}" ha sido recibido. ¡Te avisaremos cuando esté listo!`;
+                document.getElementById('pedido-confirmacion').style.display = 'flex';
+            })
+            .catch(() => {
+                document.getElementById('confirmacion-mensaje').textContent =
+                    `Gracias ${datos.nombre}, tu pedido "${datos.pedido}" ha sido registrado.`;
+                document.getElementById('pedido-confirmacion').style.display = 'flex';
+            });
+        }
+
+        function nuevoPedido() {
+            document.getElementById('form-pedido').reset();
+            document.getElementById('pedido-confirmacion').style.display = 'none';
+            window.scrollTo({ top: document.getElementById('menu').offsetTop - 80, behavior: 'smooth' });
+        }
+
+        // Scroll suave para links de navegación
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({ top: target.offsetTop - 70, behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+
+
     <!-- Roly R. lazaro C.: feature/PIE-PAGINA -->
     <footer id="contacto">
         <!-- Carrusel de Marcas de Café -->
